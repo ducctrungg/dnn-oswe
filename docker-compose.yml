@@ -1,19 +1,30 @@
 services:
   db:
     build:
-      context: ./sql-server
+      context: ./db
       dockerfile: Dockerfile
-    image: sql-express:latest
+    image: sqlexpress:latest
+    container_name: sqlserver
     environment:
       - SA_PASSWORD=P@ssw0rd
+      - ACCEPT_EULA=Y
+      - DB_NAME=DNNDatabase
+      - DB_USER=DNNSQLUser
+      - DB_PASSWORD=*OSWE#1234
     ports:
       - "1433:1433"
-  
+    healthcheck:
+      test: [ "CMD", "sqlcmd", "-S", "localhost", "-Q", "SELECT 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   web:
     build:
       context: .
       dockerfile: Dockerfile
     image: dotnetnuke:8.0.4
+    container_name: dnn
     ports:
       - "8000:8000"
     depends_on:
