@@ -1,5 +1,5 @@
 # Use the LTSC 2019 image for maximum compatibility with legacy.NET 4.5+
-FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
+FROM mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-ltsc2019
 
 # Define version
 ENV DNN_VERSION=8.0.4
