@@ -3,7 +3,7 @@ services:
     build:
       context: ./db
       dockerfile: Dockerfile
-    image: sqlexpress:latest
+    image: sqlexpress:2017
     container_name: sqlserver
     environment:
       - SA_PASSWORD=P@ssw0rd
