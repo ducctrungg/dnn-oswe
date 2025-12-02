@@ -1,8 +1,7 @@
 # Use the LTSC 2019 image for maximum compatibility with legacy.NET 4.5+
-FROM mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-ltsc2019
+FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
 
 # Define version
-ENV DNN_VERSION=8.0.4
 ENV DNN_DOWNLOAD_URL=https://github.com/dnnsoftware/Dnn.Platform/releases/download/v8.0.4/DNN_Platform_8.0.4.226_Install.zip
 
 # Set shell to PowerShell for advanced scripting capabilities
