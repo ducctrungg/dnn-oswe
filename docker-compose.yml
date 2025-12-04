@@ -27,5 +27,6 @@ services:
     container_name: dnn
     ports:
       - "8000:8000"
+      - "4026:4026"
     depends_on:
       - db
